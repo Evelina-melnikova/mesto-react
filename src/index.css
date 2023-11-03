@@ -46,3 +46,6 @@
 @import url(../src/blocks/elements/__element-container-like/elements__element-container-like.css);
 @import url(../src/blocks/elements/__element-like-counter/elements__element-like-counter.css);
 @import url(../src/blocks/profile/__avatar-overlay/profile__avatar-overlay.css);
+@import url(../src/blocks//popup/__form/popup__form.css);
+@import url(../src/blocks/popup/__input/_type/popup__input_type_name.css);
+@import url(../src/blocks/popup/__input/_type/popup__input_type_job.css);
