@@ -12,6 +12,7 @@ function App() {
   const [isEditAvatarPopupOpen, setEditAvatarPopup] = useState(false);
   const [selectedCard, setSelectedCard] = useState([]);
 
+
   const handleEditAvatarClick = () => {
     setEditAvatarPopup(true);
   };
@@ -20,7 +21,7 @@ function App() {
     setEditProfilePopup(true);
   };
 
-  const handleAddPlaceClick = () => {
+  const handleAddCardsClick = () => {
     setAddCardsPopup(true);
   };
 
@@ -37,7 +38,7 @@ function App() {
         <Header />
         <Main
           onEditProfile={handleEditProfileClick}
-          onAddPlace={handleAddPlaceClick}
+          onAddCard={handleAddCardsClick}
           onEditAvatar={handleEditAvatarClick}
           onCardClick={setSelectedCard}
         />
@@ -128,6 +129,25 @@ function App() {
         title="Вы уверены?"
         button="Да"
       />
+       {/* <div className="popup popup_approval">
+        <div className="popup__container popup__container_approval">
+          <button
+            className="popup__close-button popup__close-button_approval"
+            type="button"
+            aria-label="Закрыть"
+          />
+          <h2 className="popup__title popup__title_approval">Вы уверены?</h2>
+          <form
+            name="delete"
+            className="popup__form popup__form_approval"
+            noValidate=""
+          >
+            <button className="popup__save-button  popup__save-button_approval" type="submit">
+              Да
+            </button>
+          </form>
+        </div>
+      </div> */}
       <PopupWithForm
         name="avatar"
         title="Обновить аватар"

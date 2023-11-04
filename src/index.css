@@ -49,3 +49,4 @@
 @import url(../src/blocks//popup/__form/popup__form.css);
 @import url(../src/blocks/popup/__input/_type/popup__input_type_name.css);
 @import url(../src/blocks/popup/__input/_type/popup__input_type_job.css);
+@import url(../src/blocks/popup/__input/_type/popup__input_type_link.css);
