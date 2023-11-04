@@ -41,7 +41,7 @@ export default function Main({ onEditProfile, onAddCard, onEditAvatar, onCardCli
           />
         </div>
         <div className="profile__info">
-          <div class="profile__info-name-and-button">
+          <div className="profile__info-name-and-button">
             <h1 className="profile__info-name" aria-label="Имя пользователя">
               {userName}
             </h1>

@@ -10,7 +10,7 @@ export default function Card({ card, onCardClick }) {
     <li className="elements__element-card">
       <div className="elements__element-group">
         <button className="elements__element-delete" type="button" />
-        <img alt="Фотография места" className="elements__element-img" src={card.link} onClick={handleClick} />
+        <img alt="Фотография: {card.name}"  className="elements__element-img" src={card.link} onClick={handleClick} />
       </div>
 
       <div className="elements__element-item">

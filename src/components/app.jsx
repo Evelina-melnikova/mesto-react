@@ -10,7 +10,7 @@ function App() {
   const [isEditProfilePopupOpen, setEditProfilePopup] = useState(false);
   const [isAddCardsPopupOpen, setAddCardsPopup] = useState(false);
   const [isEditAvatarPopupOpen, setEditAvatarPopup] = useState(false);
-  const [selectedCard, setSelectedCard] = useState([]);
+  const [selectedCard, setSelectedCard] = useState([null]);
 
 
   const handleEditAvatarClick = () => {
@@ -29,7 +29,7 @@ function App() {
     setEditAvatarPopup(false);
     setEditProfilePopup(false);
     setAddCardsPopup(false);
-    setSelectedCard([]);
+    setSelectedCard([null]);
   }
 
   return (
@@ -58,8 +58,9 @@ function App() {
             maxLength={40}
             type="text"
             id="name"
+            placeholder="Имя"
             className="popup__input popup__input_type_name"
-            required=""
+            required
           />
           <span
             className="popup__error"
@@ -73,8 +74,9 @@ function App() {
             maxLength={200}
             type="text"
             id="about"
+            placeholder="О себе"
             className="popup__input popup__input_type_job"
-            required=""
+            required
           />
           <span
             className="popup__error"
@@ -98,7 +100,7 @@ function App() {
             type="text"
             id="title"
             className="popup__input popup__input_type_title"
-            required=""
+            required
           />
           <span
             className="popup__error"
@@ -112,7 +114,7 @@ function App() {
             type="url"
             id="link"
             className="popup__input popup__input_type_link"
-            required=""
+            required
           />
           <span
             className="popup__input-error popup__input-error_type_link"
