@@ -10,7 +10,7 @@ function App() {
   const [isEditProfilePopupOpen, setEditProfilePopup] = useState(false);
   const [isAddCardsPopupOpen, setAddCardsPopup] = useState(false);
   const [isEditAvatarPopupOpen, setEditAvatarPopup] = useState(false);
-  const [selectedCard, setSelectedCard] = useState([null]);
+  const [selectedCard, setSelectedCard] = useState(null);
 
 
   const handleEditAvatarClick = () => {
@@ -29,7 +29,7 @@ function App() {
     setEditAvatarPopup(false);
     setEditProfilePopup(false);
     setAddCardsPopup(false);
-    setSelectedCard([null]);
+    setSelectedCard(null);
   }
 
   return (
