@@ -45,7 +45,7 @@ export default function App() {
   const closeAllPopups = () => {
     setEditAvatarPopup(false);
     setEditProfilePopup(false);
-    setSelectedCard([]);
+    setSelectedCard({});
     setSelectedDeleteCard([]);
     setAddCardsPopup(false);
     setDeletePopup(false);
