@@ -55,23 +55,26 @@ class Api {
         )
     }
 
-    setlikeApi(data) {
-        return this._getRequest(`${this._url}/cards/${data}/likes `,
-            {
+    setlikeApi(id, isLiked) {
+        return isLiked
+            ? this._getRequest(`${this._url}/cards/${id}/likes`, {
                 method: 'PUT',
-                headers: this._headers
-
+                headers: this._headers,
             })
-    }
-
-    removeLikeApi(data) {
-        return this._getRequest(`${this._url}/cards/${data}/likes`,
-            {
+            : this._getRequest(`${this._url}/cards/${id}/likes`, {
                 method: 'DELETE',
-                headers: this._headers
-
-            })
+                headers: this._headers,
+            });
     }
+
+    // removeLikeApi(data) {
+    //     return this._getRequest(`${this._url}/cards/${data}/likes`,
+    //         {
+    //             method: 'DELETE',
+    //             headers: this._headers
+
+    //         })
+    // }
 
     setUserInfo(data) {
         return this._getRequest(`${this._url}/users/me`, {

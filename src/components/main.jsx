@@ -3,7 +3,7 @@ import api from '../utils/Api';
 import Card from './card';
 
 
-export default function Main({ onEditProfile, onAddCard, onEditAvatar, onCardClick }) {
+export default function Main({ onEditProfile, onAddPlace, onEditAvatar, onDeletePopup, onSelectDeleteCard, onCardClick, onCardLike }) {
 
   const [userName, setUserName] = useState('');
   const [userSurname, setuserSurname] = useState('');
@@ -17,15 +17,15 @@ export default function Main({ onEditProfile, onAddCard, onEditAvatar, onCardCli
         setuserSurname(about);
         setUserAvatar(avatar);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        console.log(err);
       });
     api.getAllCards()
       .then(data => {
         setCards(data);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
 
@@ -60,13 +60,21 @@ export default function Main({ onEditProfile, onAddCard, onEditAvatar, onCardCli
           className="profile__add-button"
           type="button"
           aria-label="Добавить"
-          onClick={onAddCard}
+          onClick={onAddPlace}
         />
       </section>
       <section className="elements" aria-label="Карточки мест России">
         <ul className="elements__element">
-          {cards.map((card) => (
-            <Card card={card} onCardClick={onCardClick} key={card._id} />
+        {cards.map((card) => (
+            <Card
+              card={card}
+              onCardClick={onCardClick}
+              onCardLike={onCardLike}
+              onCardDelete={onDeletePopup}
+              onSelectDeleteCard={onSelectDeleteCard}
+              onDeletePopup={onDeletePopup}
+              key={card._id}
+            />
           ))}
         </ul>
       </section>
