@@ -3,38 +3,40 @@ import api from '../utils/Api';
 import Card from './card';
 
 
-export default function Main({ onEditProfile, onAddPlace, onEditAvatar, onDeletePopup, onSelectDeleteCard, onCardClick, onCardLike }) {
+export default function Main({ currentUser, cards, onEditProfile,
+  onAddPlace, onEditAvatar, onDeletePopup,
+  onSelectDeleteCard, onCardClick, onCardLike }) {
 
-  const [userName, setUserName] = useState('');
-  const [userSurname, setuserSurname] = useState('');
-  const [userAvatar, setUserAvatar] = useState('');
-  const [cards, setCards] = useState([]);
+  // const [userName, setUserName] = useState('');
+  // const [userSurname, setuserSurname] = useState('');
+  // const [userAvatar, setUserAvatar] = useState('');
+  // const [cards, setCards] = useState([]);
 
-  useEffect(() => {
-    api.getUserInfo()
-      .then(({ name, about, avatar }) => {
-        setUserName(name);
-        setuserSurname(about);
-        setUserAvatar(avatar);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    api.getAllCards()
-      .then(data => {
-        setCards(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   api.getUserInfo()
+  //     .then(({ name, about, avatar }) => {
+  //       setUserName(name);
+  //       setuserSurname(about);
+  //       setUserAvatar(avatar);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  //   api.getAllCards()
+  //     .then(data => {
+  //       setCards(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   return (
     <main className="content">
       <section className="profile">
         <div className="profile__avatar-overlay">
           <img
-            src={userAvatar}
+            src={currentUser.avatar}
             alt="Аватар пользователя"
             className="profile__avatar"
             onClick={onEditAvatar}
@@ -43,7 +45,7 @@ export default function Main({ onEditProfile, onAddPlace, onEditAvatar, onDelete
         <div className="profile__info">
           <div className="profile__info-name-and-button">
             <h1 className="profile__info-name" aria-label="Имя пользователя">
-              {userName}
+              {currentUser.name}
             </h1>
             <button
               className="profile__info-edit-button"
@@ -53,7 +55,7 @@ export default function Main({ onEditProfile, onAddPlace, onEditAvatar, onDelete
             />
           </div>
           <p className="profile__info-popup-job">
-            {userSurname}
+            {currentUser.about}
           </p>
         </div>
         <button
@@ -65,7 +67,7 @@ export default function Main({ onEditProfile, onAddPlace, onEditAvatar, onDelete
       </section>
       <section className="elements" aria-label="Карточки мест России">
         <ul className="elements__element">
-        {cards.map((card) => (
+          {cards.map((card) => (
             <Card
               card={card}
               onCardClick={onCardClick}

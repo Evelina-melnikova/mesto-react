@@ -160,6 +160,8 @@ export default function App() {
           <div className="page">
             <Header />
             <Main
+            cards={cards}
+            currentUser={currentUser}
               onEditProfile={handleEditProfileClick}
               onAddPlace={handleAddCardsClick}
               onEditAvatar={handleEditAvatarClick}
