@@ -21,7 +21,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isDeletePopupOpen, setDeletePopup] = useState(false);
   const [selectedDeleteCard, setSelectedDeleteCard] = useState([]);
-  const [selectedCard, setSelectedCard] = useState([]);
+  const [selectedCard, setSelectedCard] = useState({});
   const [cards, setCards] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
 

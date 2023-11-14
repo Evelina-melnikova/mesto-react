@@ -7,30 +7,6 @@ export default function Main({ currentUser, cards, onEditProfile,
   onAddPlace, onEditAvatar, onDeletePopup,
   onSelectDeleteCard, onCardClick, onCardLike }) {
 
-  // const [userName, setUserName] = useState('');
-  // const [userSurname, setuserSurname] = useState('');
-  // const [userAvatar, setUserAvatar] = useState('');
-  // const [cards, setCards] = useState([]);
-
-  // useEffect(() => {
-  //   api.getUserInfo()
-  //     .then(({ name, about, avatar }) => {
-  //       setUserName(name);
-  //       setuserSurname(about);
-  //       setUserAvatar(avatar);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  //   api.getAllCards()
-  //     .then(data => {
-  //       setCards(data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
-
   return (
     <main className="content">
       <section className="profile">
