@@ -20,7 +20,7 @@ export default function App() {
   const [isEditAvatarPopupOpen, setEditAvatarPopup] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isDeletePopupOpen, setDeletePopup] = useState(false);
-  const [selectedDeleteCard, setSelectedDeleteCard] = useState([]);
+  const [selectedDeleteCard, setSelectedDeleteCard] = useState({});
   const [selectedCard, setSelectedCard] = useState({});
   const [cards, setCards] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
@@ -46,7 +46,7 @@ export default function App() {
     setEditAvatarPopup(false);
     setEditProfilePopup(false);
     setSelectedCard({});
-    setSelectedDeleteCard([]);
+    setSelectedDeleteCard({});
     setAddCardsPopup(false);
     setDeletePopup(false);
   }
